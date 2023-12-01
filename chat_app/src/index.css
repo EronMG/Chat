@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+    --black-gradient: linear-gradient( 144.39deg, #ffffff -278.56%, #6d6d6d -78.47%, #11101d 91.61%);
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+.RegisterInput {
+    border-bottom: 1px solid #a7bcff;
+    padding: 15px;
+    width: 250px;
+}
+
+.RegisterInput::placeholder {
+    padding-left: 6px;
+    color: rgb(175, 175, 175);
+}
+
+.Serach::placeholder {
+    color: lightgray;
+}
+
+input:focus {
+    outline: 1px solid #84a1ff;
+}

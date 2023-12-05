@@ -4,7 +4,10 @@ import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
+import { DarkModeProvider } from "./context/DarkModeContext";
+
 function App() {
+  // TO DO COMP -->
   const { currentUser } = useContext(AuthContext);
   console.log(currentUser);
 
@@ -14,25 +17,27 @@ function App() {
     }
     return children;
   };
-
+  // <---
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/">
-            <Route
-              index
-              element={
-                <ProtectedRoute>
-                  <Home />
-                </ProtectedRoute>
-              }
-            />
-            <Route path="login" element={<Login />}></Route>
-            <Route path="Register" element={<Register />}></Route>
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <DarkModeProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/">
+              <Route
+                index
+                element={
+                  <ProtectedRoute>
+                    <Home />
+                  </ProtectedRoute>
+                }
+              />
+              <Route path="login" element={<Login />}></Route>
+              <Route path="Register" element={<Register />}></Route>
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </DarkModeProvider>
     </>
   );
 }

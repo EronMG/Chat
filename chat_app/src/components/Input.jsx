@@ -75,17 +75,25 @@ const Input = () => {
     setText("");
     setImg(null);
   };
+
   return (
-    <div className="h-[70px] bg-white p-[10px] flex items-center justify-between">
+    <div
+      id="dark5"
+      className="h-[70px] bg-white p-[10px] flex items-center justify-between"
+    >
       <input
+        id="dark10"
         type="text"
         placeholder="Type something..."
-        className="w-[100%] text-[#2f2d52] text-[18px]  h-[40px]"
+        className="w-[100%] text-[#2f2d52] text-[18px] h-[40px]"
         onChange={(e) => setText(e.target.value)}
         value={text}
       />
       <div className="flex items-center gap-[10px]">
-        <IoIosAttach className=" text-[24px] text-[#5b5b8d] cursor-pointer hidden sm:block" />
+        <IoIosAttach
+          id="darkIcon"
+          className=" text-[24px] text-[#5b5b8d] cursor-pointer hidden sm:block"
+        />
         <input
           type="file"
           className="hidden"
@@ -93,10 +101,13 @@ const Input = () => {
           onChange={(e) => setImg(e.target.files[0])}
         />
         <label htmlFor="file">
-          <LuImagePlus className="text-[24px] text-[#5b5b8d] cursor-pointer" />
+          <LuImagePlus
+            id="darkIcon1"
+            className="text-[24px] text-[#5b5b8d] cursor-pointer"
+          />
         </label>
         <button
-          className="border-none text-white bg-[#8da4f1] py-[10px] px-[15px]"
+          className="border-none text-white bg-[#8da4f1] py-[10px] px-[15px] rounded-[10px]"
           onClick={handleSend}
         >
           Send

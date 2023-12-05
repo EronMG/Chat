@@ -1,24 +1,31 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link } from "react-router-dom";
 import { auth } from "../firebase";
+
 const Login = () => {
   const [err, setErr] = useState(false);
+
   const navigate = useNavigate();
   console.log(err);
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const email = e.target[0].value;
-    const password = e.target[1].value;
 
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      navigate("/");
-    } catch (err) {
-      setErr(true);
-    }
-  };
+  // useMemo
+  const handleSubmit = useCallback(
+    async (e) => {
+      e.preventDefault();
+      const email = e.target[0].value;
+      const password = e.target[1].value;
+
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+        navigate("/");
+      } catch (err) {
+        setErr(true);
+      }
+    },
+    [navigate]
+  );
 
   return (
     <div className="flex justify-center items-center h-[100vh] bg-[#a7bcff]">

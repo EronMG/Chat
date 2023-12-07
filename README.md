@@ -1,4 +1,4 @@
-# Chat <span style="color:blue">Lama</span>
+# [Chat <span style="color:blue">Lama</span>](https://chat-one-lilac.vercel.app/)
 Online messenger written in <span style="color:yellow">JavaScript</span>. 
 The main library is [React](https://react.dev/). 
 The [tailwindcss](https://tailwindcss.com/) framework is used for styling.

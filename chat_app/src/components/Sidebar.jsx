@@ -23,7 +23,7 @@ const Sidebar = () => {
       <Chats />
       <button
         onClick={toggleMode}
-        className="text-[yellow] bg-[black] rounded-[100px] w-[50px] h-[20px] absolute bottom-[30px] left-[5px] ms:bottom-[2px] ms:left-[110px]"
+        className="text-[yellow] bg-[black] rounded-[100px] w-[50px] h-[20px] absolute bottom-[30px] left-[5px] ms:bottom-[12px] ms:left-[110px]"
       >
         <p
           style={{
@@ -37,7 +37,7 @@ const Sidebar = () => {
           {isDarkMode ? <FaMoon /> : <IoIosSunny />}
         </p>
       </button>
-      <span className="font-bold absolute bottom-[0px] text-[#ddddf7] pl-[7px]">
+      <span className="font-bold absolute bottom-[0px] text-[#ddddf7] pl-[7px]  ms:pb-[10px]">
         Lama Chat
       </span>
     </div>
